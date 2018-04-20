@@ -11,8 +11,10 @@ commands for this app, if you wanna clone it down and try it out:
 
 First, clone and install everything needed:
 `https://github.com/zachmandeville/sample-choo-app.git`
+
 enter the folder you just cloned:
 `cd sample-choo-app`
+
 Install all the dependencies (you'll need node, and npm.  node can be installed here: http://node.js.org/ npm here: npmjs.com)
 `npm install`
 
