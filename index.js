@@ -29,11 +29,11 @@ app.route('/', require('./views/main')) //When someone goes to the root director
 app.route('/*', require('./views/404'))//If they go to any other directory (app.coolguy.website/nonsense), render a 404 view.
 
 //This is a single page app, the view being shown changes, but the page itself doesn't.   This is
-//fundamentally different from a static page site, where when someone goes to
+//fundamentally different from a static page site like coolguy.website, where when someone goes to
 //coolguy.website/thing, they are directed from index.html to a wholly new webpage called
 //thing.html,.  Here, you'd adjust your view
 //appropriately, but keep them on the page.  The routes, then, are conveniences for sharing this
-//particular _view_ of the app, not a particular page in the app.  
+//particular _view_ of the app, not a particular page in the app. We are always on the same page.
 
 
 module.exports = app.mount('body')//Mount this app within the 'body' tag of yr webpage.  It's like planting a flower in a specific patch of soil, and then watching it blossom as the page loads.
