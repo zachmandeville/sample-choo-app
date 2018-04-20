@@ -5,15 +5,15 @@ var TITLE = 'sample-choo-app - main' //make a variable called TITLE that is this
 module.exports = view //export the function we calling 'view', which we'll define below.  
 //exporting let's us import it in other areas, like the old HQ at index.js
 
-function view (state, emit) {//here's that function, that is aware of the page's state and can 
-//emit things.  They are not as full-featured as the emitter in store.  emit can just do things like
-//shout, 'hey! a button was clicked!  does that matter to anyone?" and the emitter, defined in our
+function view (state, emit) {//here's that view function, that is aware of the page's state and can 
+//emit things.  They are not as full-featured as an emitter.  emit can just shout things like
+//'hey! a button was clicked!  does that matter to anyone?" and the emitter, defined in our
 //click.js file, will say, 'it matters to me.'
   if (state.title !== TITLE) emit(state.events.DOMTITLECHANGE, TITLE)//this is the title of the html page.
   //so if the title wasn't correct before it IS NOW.
 
   return html`
-//this is just good ol' html, being rendered by the function.  Nothing to see here until line 104
+<!-- this is just good ol' html, being rendered by the function.  Nothing to see here until line 104 -->
     <body class="code lh-copy">
       <main class="pa3 cf center">
         <section class="fl mw6 w-50-m w-third-l pa3">
@@ -101,14 +101,15 @@ function view (state, emit) {//here's that function, that is aware of the page's
             as an example. A place to start from. It's your project now, so
             go ahead and delete them once you know how they work.
           </p>
-//hello again! So here is where the state and emit arguments come in, for that ol' 'choo magic'
+<!-- hello again! So here is where the state and emit arguments come in, for that ol' 'choo magic' -->
           <p>Number of clicks stored: ${state.totalClicks}</p>
-         //take a look at the state of our app, specifically the total clicks, and display whatever
-        //value is in that property.  It starts at 0.
+<!-- take a look at the state of our app, specifically the total clicks, and display whatever value is in that property.  
+It starts at 0. -->
 
           <button class="dim ph3 ba bw1 pv2 b--black pointer bg-white"
-            onclick=${handleClick}>//This button has an onclick event that, when clicked, signals the function
-           //handleClick, which we'll define below (line 164)
+            onclick=${handleClick}>
+<!-- This button has an onclick event that, when clicked, signals the function handleClick, w
+hich we'll define below (line 164)-->
             Emit a click event
           </button>
 
@@ -163,7 +164,8 @@ function view (state, emit) {//here's that function, that is aware of the page's
 
 //hey! here's that function triggered when our button is clicked.
     function handleClick () {
-    emit('clicks:add', 1) //it emits the signal 'clicks:add' 
+    emit('clicks:add', 1) /
+     //it emits the signal 'clicks:add' 
      //and passes an item along with the signal: the number 1
   }
 }
